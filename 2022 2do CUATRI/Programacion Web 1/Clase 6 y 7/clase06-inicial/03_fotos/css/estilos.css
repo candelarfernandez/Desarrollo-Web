@@ -1,0 +1,16 @@
+.galeria img {
+    width: 100%;
+}
+@media screen and (min-width:48em){
+    .galeria{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        align-items: center;
+    }
+    .galeria img{
+        width: calc(50% - 1em);
+    }
+}
+
+

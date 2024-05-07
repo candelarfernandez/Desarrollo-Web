@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+}
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+h1{
+    font-style: italic;
+    background-color: darksalmon;
+    border: 2px solid #000;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+h2{
+    color: brown; 
+}
+a{
+    color: brown;
+    text-decoration: none;
+}
+a:hover{
+    color: #000;
+    text-decoration: underline;
+}
+.centrado{
+    text-align: center;
+    font-weight: bold;
+}
+#principal{
+    font-size: 30px; /*16px = 1em*/
+    color: #5eb0c3;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: right;
+}

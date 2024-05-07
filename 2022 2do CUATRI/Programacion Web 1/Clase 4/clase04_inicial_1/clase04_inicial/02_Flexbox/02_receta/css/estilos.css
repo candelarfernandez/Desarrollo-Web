@@ -1,0 +1,91 @@
+/*
+    #624435 color oscuro
+    #896755 color claro
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #624435;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header {
+    text-align: center;
+    color: white;
+    background-color: #896755;
+    padding: 10px;
+    border-bottom: 4px solid #624435;
+}
+
+main {
+    width: 80%;
+    margin: auto;
+}
+
+footer {
+    background-color: #896755;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    margin-top: 10px;
+    padding: 10px;
+    border-top: 3px solid #624435;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+h2 {
+    background-color: #624435;
+    color: white;
+    width: 35%;
+    padding: 7px;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 16px;
+    border-bottom: 2px dotted #624435;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+li {
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+
+.arriba {
+    text-align: right;
+}
+
+.arriba a {
+    text-decoration: none;
+    color: #624435;
+}
+
+.arriba a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+.contenedor {
+    display: flex;
+}
+
+.contenedor article {
+    width: 50%;
+}

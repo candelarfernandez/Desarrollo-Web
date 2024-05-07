@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtro</title>
+    
+</head>
+<body>
+        <select name="establecimiento" id="establecimiento"> 
+            <option value="1">Inst 1</option>
+            <option value="2">Inst 2</option>
+        </select>
+        <select name="idioma" id="idioma">
+            <option value="ingles">Ingles</option>
+            <option value="frances">Frances</option>
+        </select>
+        <button id="filtrar">Filtrar</button>
+    </section>
+    <section id="cursos">
+
+    </section>
+    <script>
+        let cursos=[
+            {
+                "establecimiento":1,
+                "idioma":"ingles",
+                "horario":1
+            },
+            {
+                "establecimiento":1,
+                "idioma":"ingles",
+                "horario":2
+            },
+            {
+                "establecimiento":1,
+                "idioma":"ingles",
+                "horario":3
+            },
+            {
+                "establecimiento":1,
+                "idioma":"frances",
+                "horario":3
+            },
+            {
+                "establecimiento":2,
+                "idioma":"frances",
+                "horario":1
+            },
+            {
+                "establecimiento":2,
+                "idioma":"frances",
+                "horario":2
+            },
+            {
+                "establecimiento":2,
+                "idioma":"ingles",
+                "horario":1
+            },
+            {
+                "establecimiento":2,
+                "idioma":"portugues",
+                "horario":3
+            }
+        ];
+    </script>
+    <script src="js/07_filtro-array-objetos.js"></script>
+</body>
+</html>

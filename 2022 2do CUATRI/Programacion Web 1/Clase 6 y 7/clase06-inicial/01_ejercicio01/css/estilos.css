@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-size: 80%;
+}
+h1{
+    font-size: 1.4em;
+}
+h2{
+    font-size: 1.3em;
+}
+h3{
+    font-size: 1.2em;
+}
+h4{
+    font-size: 1.1em;
+}
+p{
+    font-size: 1em;
+}
+/*celulares verticale gral: 360px, recomendacion 320px
+  768px: tablet vertical 
+  1024px: tablet horizontal
+  1024px: monitores tubo
+  1360px: mayoria de pc y notebook
+  1680px: resolucion monitores mas grandes
+  1920px: full hd*/
+
+  /*de tablet en adelante*/
+@media screen and (min-width:48em){
+    body{
+        background-color: rgb(192, 73, 73);
+        font-size: 90%;
+    }
+}
+@media screen and (min-width:60em){
+    body{
+        background-color: rgb(73, 192, 132);
+        /*color:blueviolet;*/
+        font-size: 100%;
+    }
+}
+
+
+
+
+
+
+

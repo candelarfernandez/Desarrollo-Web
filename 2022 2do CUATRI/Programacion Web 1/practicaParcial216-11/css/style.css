@@ -1,0 +1,21 @@
+h1, h3, .article1, .article2{
+    border: 1.5px solid #000;
+    padding: 3px;
+
+}
+h1, h3{
+    text-align: center;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+.article1{
+    width: 80%;
+}
+.article2{
+    width: 20%;
+}
+#producto, #codigo, #repetirCodigo, #tipo, #email{
+    width: 90%;
+}

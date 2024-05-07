@@ -1,0 +1,7 @@
+La plataforma MIeL nos permite visualizar las materias a las que estamos inscriptos en la universidad incluyendo su contenido, permitiendonos entregar evaluaciones o trabajos, mandar mensajes privados a los tutores de las materias o compañeros y participar en un foro por cada materia.
+En cuanto a lo estético podemos destacar el color verde que lo caracteriza y su simplicidad para que al alumno le sea más sencillo encontrar rápidamente lo que necesite.
+Enfocandonos en la teconología involucrada, podemos identificar que la página esta realizada con HTML, CSS y JavaScript.
+
+Considero que sería una buena idea agregar como funcionalidad fuera de la sección de "contenidos" el cronograma de cada materia ya que sería más práctico tenerlo en la página principal de MIeL.
+
+

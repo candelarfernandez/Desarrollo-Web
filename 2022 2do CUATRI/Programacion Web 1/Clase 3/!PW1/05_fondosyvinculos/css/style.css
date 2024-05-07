@@ -1,0 +1,39 @@
+body{
+    background-image: url(../img/fondo01.png);
+}
+
+h1{
+    background-color: rgb(53, 23, 185);
+    color: #fff;
+    padding: 10px;      
+    width: 70%;
+   /* margin: auto; */
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 200px;
+}
+
+h2{
+    background-color: rgb(66, 66, 66);
+    color: #fff;
+    width: 20%;
+    display: inline-block;
+}
+
+a{
+    background-color: darkcyan;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;   
+    margin-right: 10px; 
+    border-radius: 16px;
+    
+}
+
+a:hover{
+    background-color: black;
+}
+
+.centrado{
+    text-align: center;
+}

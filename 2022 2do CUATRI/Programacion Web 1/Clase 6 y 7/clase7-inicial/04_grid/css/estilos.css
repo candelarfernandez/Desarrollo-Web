@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Blinker&display=swap');
+body{
+    font-family: 'Blinker', sans-serif;
+}
+.grid div{
+    color:#fff;
+}
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 3fr;
+    column-gap: 2em;
+    row-gap: 1em;
+
+}
+.a{
+    background-color: #5e229a;
+}
+.b{
+    background-color: #fcad43;
+}
+.c{
+    background-color: #fce463;
+}
+.d{
+    background-color:#2d7bf7;
+}

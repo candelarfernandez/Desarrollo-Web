@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="es" />
+    <meta name="application-name" content="MIeL" />
+    <meta name="author" content="Alejandro Rusticcini, Leandro Morrone, Facundo DAranno, Juan De Cicco" />
+    <meta name="keywords" content="miel, unlam, educacion, distancia, alumnos, ead, tutoria, plataforma, computacion" />
+    <meta name="description"
+        content="MIeL (Materias Interactivas en L&iacute;nea) es la plataforma de gesti&oacute;n de educaci&oacute;n a distancia de la UNLaM, desarrollada y administrada por docentes de la Universidad." />
+    <meta name="theme-color" content="#111111" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <title>MIeL - Materias Interactivas en L&iacute;nea</title>
+
+    <!-- Iconos y manifiesto -->
+    <link rel="apple-touch-icon" sizes="57x57"
+        href="https://miel.unlam.edu.ar/vista/imagenes/favicons/apple-icon-57x57.png?2023.1.0" />
+    <link rel="apple-touch-icon" sizes="60x60"
+        href="https://miel.unlam.edu.ar/vista/imagenes/favicons/apple-icon-60x60.png?2023.1.0" />
+    <link rel="apple-touch-icon" sizes="72x72"
+        href="https://miel.unlam.edu.ar/vista/imagenes/favicons/apple-icon-72x72.png?2023.1.0" />
+    <link rel="apple-touch-icon" sizes="76x76"
+        href="https://miel.unlam.edu.ar/vista/imagenes/favicons/apple-icon-76x76.png?2023.1.0" />
+    <link rel="apple-touch-icon" sizes="114x114"
+        href="https://miel.unlam.edu.ar/vista/imagenes/favicons/apple-icon-114x114.png?2023.1.0" />
+    <link rel="apple-touch-icon" sizes="120x120"
+        href="https://miel.unlam.edu.ar/vista/imagenes/favicons/apple-icon-120x120.png?2023.1.0" />
+    <link rel="apple-touch-icon" sizes="144x144"
+        href="https://miel.unlam.edu.ar/vista/imagenes/favicons/apple-icon-144x144.png?2023.1.0" />
+    <link rel="apple-touch-icon" sizes="152x152"
+        href="https://miel.unlam.edu.ar/vista/imagenes/favicons/apple-icon-152x152.png?2023.1.0" />
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="https://miel.unlam.edu.ar/vista/imagenes/favicons/apple-icon-180x180.png?2023.1.0" />
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="https://miel.unlam.edu.ar/vista/imagenes/favicons/android-icon-192x192.png?2023.1.0" />
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://miel.unlam.edu.ar/vista/imagenes/favicons/favicon-32x32.png?2023.1.0" />
+    <link rel="icon" type="image/png" sizes="96x96"
+        href="https://miel.unlam.edu.ar/vista/imagenes/favicons/favicon-96x96.png?2023.1.0" />
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://miel.unlam.edu.ar/vista/imagenes/favicons/favicon-16x16.png?2023.1.0" />
+    <link rel="icon" type="image/ico" href="https://miel.unlam.edu.ar/vista/imagenes/favicons/favicon.ico?2023.1.0" />
+    <link rel="manifest" href="https://miel.unlam.edu.ar/vista/imagenes/favicons/manifest.json?2023.1.0" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage"
+        content="https://miel.unlam.edu.ar/vista/imagenes/favicons/ms-icon-144x144.png?2023.1.0" />
+
+    <!-- Estilos generales de MIeL -->
+    <link rel="stylesheet" href="https://miel.unlam.edu.ar/vista/css/w3.css?2023.1.0" />
+    <link rel="stylesheet" href="https://miel.unlam.edu.ar/vista/css/miel-theme.css?2023.1.0" />
+    <link rel="stylesheet" href="https://miel.unlam.edu.ar/vista/css/miel-template.css?2023.1.0" />
+    <link rel="stylesheet" href="https://miel.unlam.edu.ar/vista/css/miel-modulos.css?2023.1.0" />
+    <link rel="stylesheet" href="https://miel.unlam.edu.ar/vista/css/miel-dark-theme.css?2023.1.0" id="mielTheme" />
+    <link rel="stylesheet" href="https://miel.unlam.edu.ar/vista/css/prism/prism.dark.css?2023.1.0" />
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <style>
+        .material-icons {
+            font-family: "Material Icons";
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            /* Preferred icon size */
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+
+            /* Support for all WebKit browsers. */
+            -webkit-font-smoothing: antialiased;
+            /* Support for Safari and Chrome. */
+            text-rendering: optimizeLegibility;
+
+            /* Support for Firefox. */
+            -moz-osx-font-smoothing: grayscale;
+
+            /* Support for IE. */
+            font-feature-settings: "liga";
+        }
+    </style>
+
+    <!-- Fuentes e iconos de MIeL -->
+    <link rel="stylesheet" href="https://miel.unlam.edu.ar/vista/fuentes/material-icons-v94/material-icons.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" />
+
+    <link rel="stylesheet" href="https://miel.unlam.edu.ar/vista/fuentes/material-file-types/material-file-types.css" />
+    <link rel="stylesheet"
+        href="https://miel.unlam.edu.ar/vista/fuentes/material-file-types/material-file-types-dark.css"
+        id="fileIconsTheme" />
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://miel.unlam.edu.ar/vista/script/jquery-1.12.4.min.js?2023.1.0"></script>
+
+    <!-- jQuery Validation Plugin -->
+    <script type="text/javascript"
+        src="https://miel.unlam.edu.ar/vista/script/jquery-validation/jquery.validate.min.js?2023.1.0"></script>
+    <script type="text/javascript"
+        src="https://miel.unlam.edu.ar/vista/script/jquery-validation/additional-methods.min.js?2023.1.0"></script>
+    <script type="text/javascript"
+        src="https://miel.unlam.edu.ar/vista/script/jquery-validation/miel-additional-methods.js?2023.1.0"></script>
+    <script type="text/javascript"
+        src="https://miel.unlam.edu.ar/vista/script/jquery-validation/messages_es.js?2023.1.0"></script>
+
+    <!-- Otros metodos de soporte -->
+    <script type="text/javascript" src="https://miel.unlam.edu.ar/vista/script/helpers.js?2023.1.0"></script>
+
+    <!-- Datepicker -->
+    <link rel="stylesheet" href="https://miel.unlam.edu.ar/vista/css/datepicker/datepicker.css?2023.1.0" />
+    <script type="text/javascript"
+        src="https://miel.unlam.edu.ar/vista/script/datepicker/datepicker.js?2023.1.0"></script>
+    <script type="text/javascript"
+        src="https://miel.unlam.edu.ar/vista/script/datepicker/datepicker.es-ES.js?2023.1.0"></script>
+
+    <!-- Magnific popup (modal plugin) -->
+    <link rel="stylesheet" type="text/css"
+        href="https://miel.unlam.edu.ar/vista/css/magnific-popup/magnific-popup.css?2023.1.0" />
+    <script type="text/javascript"
+        src="https://miel.unlam.edu.ar/vista/script/magnific-popup/magnific-popup.min.js?2023.1.0"></script>
+    <script type="text/javascript"
+        src="https://miel.unlam.edu.ar/vista/script/magnific-popup/magnific-popup-defaults.js?2023.1.0"></script>
+    <script type="text/javascript"
+        src="https://miel.unlam.edu.ar/vista/script/magnific-popup/ajax-check-session.js?2023.1.0"></script>
+
+    <!-- Tippy.js (tooltips plugin) -->
+    <script type="text/javascript" src="https://miel.unlam.edu.ar/vista/script/tippy/popper.min.js?2023.1.0"></script>
+    <script type="text/javascript" src="https://miel.unlam.edu.ar/vista/script/tippy/tippy.min.js?2023.1.0"></script>
+    <link rel="stylesheet" type="text/css" href="https://miel.unlam.edu.ar/vista/css/tippy/default.css?2023.1.0" />
+
+    <!-- Funciones para validar sesion del lado del cliente -->
+    <script type="text/javascript">
+        // Renueva la sesion del usuario cada X milisegundos
+        function recargarSesion(milisegundos) {
+            setInterval(function () {
+                $.ajax({
+                    type: "GET",
+                    url: "https://miel.unlam.edu.ar/principal/event/recargarSesion/",
+                    cache: false,
+                    success: function (data) {
+                        console.log("Ultima conexion: " + data);
+                    },
+                });
+            }, milisegundos);
+        }
+
+        // Verifica si la sesion del usuario esta activa
+        function verificarSesion() {
+            var sesionActiva = false;
+            $.ajax({
+                type: "GET",
+                url: "https://miel.unlam.edu.ar/principal/event/isLogged/",
+                cache: false,
+                async: false,
+                success: function (data) {
+                    sesionActiva = data == "1";
+                },
+            });
+            return sesionActiva;
+        }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGVLVSLH65"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "G-PGVLVSLH65");
+    </script>
+
+    <!-- Hotjar Tracking Code -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj =
+                h.hj ||
+                function () {
+                    (h.hj.q = h.hj.q || []).push(arguments);
+                };
+            h._hjSettings = { hjid: 2348490, hjsv: 6 };
+            a = o.getElementsByTagName("head")[0];
+            r = o.createElement("script");
+            r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
+
+    <script type="text/javascript"
+        src="https://miel.unlam.edu.ar/vista/script/sortable/Sortable.min.js?2023.1.0"></script>
+    <script type="text/javascript"
+        src="https://miel.unlam.edu.ar/vista/script/sortable/jquery-sortable.js?2023.1.0"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            // Inicializo tooltips de ayuda
+            tippy(".tippy", {
+                arrow: true,
+                animation: "fade",
+                delay: [0, 0],
+            });
+
+            // Inicializo el ordenamiento materias con drag and drop
+            $(".curso-sortable").sortable({
+                animation: 150,
+                handle: ".sort-handler",
+                forceFallback: true,
+                onSort: function (e) {
+                    const comisiones = $(".materia-bloque")
+                        .map(function () {
+                            return $(this).data("id");
+                        })
+                        .get();
+                    $.ajax({
+                        type: "POST",
+                        url: "https://miel.unlam.edu.ar/principal/event/ordenarComisionesAjax/",
+                        data: { idComisiones: comisiones },
+                        dataType: "text",
+                    });
+                },
+            });
+
+            // Inicializo los popups con informacion y tutores de los cursos
+            $(".popup-curso").magnificPopup({
+                type: "ajax",
+                autoFocusLast: false,
+            });
+
+            // Reduce la fuente del nombre de la materia si ocupa dos renglones
+            $(".materia-titulo").each(function (i) {
+                if ($(this).height() > 30)
+                    $(this).removeClass("w3-slarge").css("line-height", "1.35");
+            });
+
+            // Marcar notificacion de inhabilitacion como leida
+            $(".botonLeerNotificacion").click(function () {
+                if (verificarSesion()) {
+                    var panel = $(this).closest(".w3-panel");
+                    $.ajax({
+                        type: "POST",
+                        url: "https://miel.unlam.edu.ar/principal/event/marcarLeidaAjax/",
+                        data: { idNotificacion: $(this).attr("data-idNotificacion") },
+                        cache: false,
+                        success: function (data) {
+                            if (data == "1") {
+                                panel.hide();
+                            }
+                        },
+                    });
+                } else {
+                    alert("Su sesi\xf3n ha finalizado. Por favor, ingrese nuevamente.");
+                }
+            });
+
+            // Boton para cambiar al modo de organizacion de cursos
+            $(".btnOrganizar").click(function () {
+                $(".botoneraOrganizar").toggleClass("w3-hide");
+                $(".botoneraDetalle").toggleClass("w3-hide");
+            });
+
+            // Muestro el boton de mostrar ocultas si hay materias ocultas
+            if ($(".materia-bloque-oculta").length > 0) {
+                $(".btnMostrarOcultas").removeClass("w3-hide");
+            }
+
+            // Boton para mostrar las materias ocultas
+            $(".btnMostrarOcultas").click(function () {
+                $(".materia-bloque-oculta").removeClass("w3-hide");
+                $(".btnMostrarOcultas").addClass("w3-hide");
+                $(".btnOcultarOcultas").removeClass("w3-hide");
+            });
+
+            // Boton para ocultar las materias ocultas
+            $(".btnOcultarOcultas").click(function () {
+                $(".materia-bloque-oculta").addClass("w3-hide");
+                $(".btnOcultarOcultas").addClass("w3-hide");
+                $(".btnMostrarOcultas").removeClass("w3-hide");
+            });
+
+            // Boton para ocultar/desocultar una materia
+            $(".btnOcultarComision").click(function () {
+                const botonComision = $(this);
+                const btnMostrarOcultas = $(".btnMostrarOcultas");
+                const btnOcultarOcultas = $(".btnOcultarOcultas");
+                const bloqueComision = $(this).closest(".materia-bloque");
+                const ocultar = bloqueComision.hasClass("materia-bloque-oculta")
+                    ? 0
+                    : 1;
+                $.ajax({
+                    type: "POST",
+                    url: "https://miel.unlam.edu.ar/principal/event/ocultarComisionAjax/",
+                    data: { idComision: bloqueComision.data("id"), ocultar },
+                    dataType: "text",
+                    success: function () {
+                        if (ocultar === 1) {
+                            botonComision[0]._tippy.setContent("Desocultar materia");
+                            bloqueComision.addClass("materia-bloque-oculta");
+                            botonComision.find("i").text("replay");
+                            if (btnMostrarOcultas.hasClass("w3-hide")) {
+                                if (btnOcultarOcultas.hasClass("w3-hide")) {
+                                    btnMostrarOcultas.removeClass("w3-hide");
+                                    bloqueComision.addClass("w3-hide");
+                                }
+                            } else {
+                                bloqueComision.addClass("w3-hide");
+                            }
+                        } else {
+                            botonComision[0]._tippy.setContent("Ocultar materia");
+                            bloqueComision.removeClass("materia-bloque-oculta");
+                            botonComision.find("i").text("close");
+                            if ($(".materia-bloque-oculta").length === 0) {
+                                btnOcultarOcultas.addClass("w3-hide");
+                            }
+                        }
+                    },
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- ================================= ENCABEZADO ================================= -->
+
+    <script type="text/javascript">
+        $(function () {
+            // Click en cualquier parte de la ventana, oculta los desplegables
+            $(window).click(function () {
+                $("#dropdownCurso, #dropdownHerramienta").removeClass("w3-show");
+            });
+
+            // Click en el desplegable de cursos, oculta el desplegable de herramientas
+            $("#dropdownCurso, #botonDropdownCurso").click(function (event) {
+                $("#dropdownHerramienta").removeClass("w3-show");
+                event.stopPropagation();
+            });
+
+            // Click en el desplegable de herramientas, oculta el desplegable de cursos
+            $("#dropdownHerramienta, #botonDropdownHerramienta").click(function (
+                event
+            ) {
+                $("#dropdownCurso").removeClass("w3-show");
+                event.stopPropagation();
+            });
+
+            // Click en el boton de cursos, abre desplegable de cursos
+            $("#botonDropdownCurso").click(function () {
+                $("#dropdownCurso").toggleClass("w3-show");
+            });
+
+            // Click en el boton de herramientas, abre desplegable de herramientas
+            $("#botonDropdownHerramienta").click(function () {
+                $("#dropdownHerramienta").toggleClass("w3-show");
+            });
+
+            // Boton para cambiar al tema claro u oscuro
+            $(".botonCambiarTema").click(function () {
+                $.post(
+                    "https://miel.unlam.edu.ar/principal/event/cambiarTemaAjax/",
+                    function (data) {
+                        $("#mielTheme").attr("href", data.darkCssPath);
+                        $("#fileIconsTheme").attr("href", data.darkFileIconsPath);
+                        $("#logoUnlamHeader").attr("src", data.logoUnlamPath);
+                        $("#logoMielHeader").attr("src", data.logoMielPath);
+                        $(".botonCambiarTema").attr(
+                            "title",
+                            data.tema === "dark" ? "Modo claro" : "Modo oscuro"
+                        );
+                    },
+                    "json"
+                );
+            });
+
+            // Cierro todos los desplegables al presionar la tecla ESC
+            $(document).keyup(function (e) {
+                if (e.keyCode === 27)
+                    $(".w3-dropdown-content").removeClass("w3-show");
+            });
+        });
+
+        // Cierro todos los desplegables si hago click en el iframe de tinymce
+        function tinymce_click() {
+            $(".w3-dropdown-content").removeClass("w3-show");
+        }
+    </script>
+
+    <header id="encabezado" class="w3-top">
+        <!-- ================================ LOGOS Y PERFIL ================================ -->
+
+        <div class="w3-row w3-white w3-padding-left w3-padding-right w3-padding-4">
+            <div class="w3-half logos">
+                <img src="https://miel.unlam.edu.ar/vista/imagenes/logo_unlam_34_dark.png" id="logoUnlamHeader"
+                    class="w3-margin-right" alt="logo unlam" />
+                <img src="https://miel.unlam.edu.ar/vista/imagenes/logo_miel_34_dark.png" id="logoMielHeader"
+                    alt="logo miel" />
+            </div>
+            <div class="w3-half w3-hide-small">
+                <a href="https://miel.unlam.edu.ar/perfil/datos/" class="w3-circle w3-right fotoPerfil" aria-label="Foto de perfil" style="background-image: url('https://miel.unlam.edu.ar/vista/imagenes/foto_perfil.jpg');"></a>
+
+                <div class="w3-right w3-right-align w3-margin-right nombreUsuario">
+                    FERNANDEZ, CANDELA ROCIO<br />
+
+                    <a href="#" class="w3-small link"><strong>Mi perfil</strong></a>
+                    &middot;
+
+                    <a href="#" class="w3-small link" id="btnAyuda"><strong>Ayuda</strong></a>
+                    &middot;
+
+                    <a href="https://miel.unlam.edu.ar/principal/event/logout/" class="w3-small link"><strong>Cerrar
+                            sesi&oacute;n</strong></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================ MENU PRINCIPAL ================================ -->
+
+        <ul id="menu-principal" class="w3-navbar w3-card-2 w3-theme">
+            <!-- ============================== BOTONERA IZQUIERDA ============================= -->
+
+            <li class="w3-opennav w3-right w3-hide-large">
+                <a class="w3-hover-theme-d1 w3-padding-6 nav-icon btnToggleMenuLateral" href="home.html"
+                    title="Men&uacute; de navegaci&oacute;n">
+                    <i class="material-icons" aria-hidden="true">menu</i>
+                </a>
+            </li>
+            <li class="w3-hide-medium w3-right w3-hide-small">
+                <a class="w3-hover-theme-d1 w3-padding-6" href="#">
+                    Men&uacute; principal
+                </a>
+            </li>
+            <li class="w3-opennav w3-right ">
+                <a class="w3-hover-theme-d1 w3-padding-6 nav-icon" href="home.html" title="Men&uacute; principal">
+                    <i class="material-icons" aria-hidden="true">home</i>
+                </a>
+            </li>
+
+            <!-- ========================= DESPLEGABLE DE HERRAMIENTAS ========================= -->
+
+            <!-- =============================== BOTONERA DERECHA ============================== -->
+
+            <li class="w3-opennav w3-right w3-hide-medium w3-hide-large">
+                <a class="w3-hover-theme-d1 w3-padding-6 nav-icon"
+                    href="https://miel.unlam.edu.ar/principal/event/logout/" title="Cerrar sesi&oacute;n">
+                    <i class="material-icons" aria-hidden="true">exit_to_app</i>
+                </a>
+            </li>
+            <li class="w3-opennav w3-right w3-hide-medium w3-hide-large">
+                <a class="w3-hover-theme-d1 w3-padding-6 nav-icon" href="#" title="Ayuda">
+                    <i class="material-icons" aria-hidden="true">help_outline</i>
+                </a>
+            </li>
+            <li class="w3-opennav w3-right w3-hide-medium w3-hide-large">
+                <a class="w3-hover-theme-d1 w3-padding-6 nav-icon" href="#" title="Mi perfil">
+                    <i class="material-icons" aria-hidden="true">person</i>
+                </a>
+            </li>
+            <li class="w3-opennav w3-right">
+                <a class="w3-hover-theme-d1 w3-padding-6 nav-icon botonCambiarTema" href="#" title="Modo claro">
+                    <i class="material-icons" aria-hidden="true">brightness_4</i>
+                </a>
+            </li>
+        </ul>
+    </header>
+    <!-- =========================== BARRA DE NAVEGACION LATERAL =========================== -->
+
+    <script type="text/javascript">
+        $(function () {
+            // Boton para cerrar el menu lateral cuando es pantalla chica
+            $(".btnCerrarMenuLateral").click(function () {
+                $("#menu-lateral").hide();
+                $("#menu-lateral-overlay").hide();
+            });
+
+            // Boton para abrir el menu lateral cuando es pantalla chica
+            $(".btnAbrirMenuLateral").click(function () {
+                $("#menu-lateral").show();
+                $("#menu-lateral-overlay").show();
+            });
+
+            // Boton para abrir/cerrar el menu lateral en pantalla chica
+            $(".btnToggleMenuLateral").click(function () {
+                $("#menu-lateral").toggle();
+                $("#menu-lateral-overlay").toggle();
+            });
+        });
+    </script>
+
+    <nav id="menu-lateral" class="w3-sidenav w3-card-2 w3-collapse w3-white">
+        <div id="menu-lateral-inner">
+            <div id="menu-lateral-inner-inner" class="w3-text-white">
+                <a href="#" class="w3-right w3-xlarge w3-padding-large w3-hide-large btnCerrarMenuLateral"
+                    title="Cerrar men&uacute; de navegaci&oacute;n">
+                    <i class="material-icons" aria-hidden="true">close</i>
+                </a>
+                <div>
+                    <div class="w3-container w3-padding-top">
+                        <h1>Utilidades</h1>
+                    </div>
+                    <a href="#" class="menu-opcion"><i class="material-icons w3-left w3-large w3-padding-right"
+                            aria-hidden="true">calendar_today</i>Calendario</a><a href="#" class="menu-opcion"><i
+                            class="material-icons w3-left w3-large w3-padding-right"
+                            aria-hidden="true">notifications</i>Novedades</a><a href="#" class="menu-opcion"><i
+                            class="material-icons w3-left w3-large w3-padding-right"
+                            aria-hidden="true">transgender</i>Curso Ley
+                        Micaela</a>
+                    <div class="w3-container w3-padding-top">
+                        <h1>Ayuda</h1>
+                    </div>
+                    <a href="#" class="menu-opcion"><i class="material-icons w3-left w3-large w3-padding-right"
+                            aria-hidden="true">subscriptions</i>Tutoriales</a><a href="#" class="menu-opcion"><i
+                            class="material-icons w3-left w3-large w3-padding-right"
+                            aria-hidden="true">help</i>Preguntas
+                        frecuentes</a><a href="#" class="menu-opcion"><i
+                            class="material-icons w3-left w3-large w3-padding-right"
+                            aria-hidden="true">thumbs_up_down</i>Enviar comentarios</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Capa con transparencia cuando se abre el menu lateral en pantallas chicas -->
+    <div id="menu-lateral-overlay" class="w3-overlay w3-hide-large btnCerrarMenuLateral"></div>
+
+    <!-- =============================== CONTENIDO PRINCIPAL =============================== -->
+
+    <main class="w3-main w3-container">
+        <div class="w3-clear">
+            <h1 class="w3-left">Materias activas</h1>
+            <div class="w3-right w3-mobile">
+                <a href="#" class="w3-btn w3-light-grey w3-section w3-mobile w3-hide-small btnMostrarOcultas w3-hide">
+                    <i class="material-icons w3-large" aria-hidden="true">visibility</i>
+                    Ver materias ocultas
+                </a>
+                <a href="#" class="w3-btn w3-light-grey w3-section w3-mobile w3-hide-small btnOcultarOcultas w3-hide">
+                    <i class="material-icons w3-large" aria-hidden="true">visibility_off</i>
+                    Ocultar materias ocultas
+                </a>
+                <a href="#" class="w3-btn w3-light-gray w3-section w3-mobile w3-hide-small btnOrganizar">
+                    Organizar materias
+                </a>
+            </div>
+        </div>
+
+        <div class="curso-sortable">
+            <div class="w3-light-grey w3-row w3-hover-shadow w3-section materia-bloque" data-id="20095102">
+                <div class="w3-col w3-mobile w3-padding materia-descripcion">
+                    <div class="w3-right w3-margin botoneraDetalle">
+                        <a href="#" class="popup-curso tippy" style="z-index: 2" data-tippy-content="Ver detalle">
+                            <i class="material-icons w3-large" aria-hidden="true">more_vert</i>
+                        </a>
+                    </div>
+                    <div class="w3-right botoneraOrganizar w3-hide w3-margin">
+                        <i class="material-icons w3-large tippy sort-handler" style="z-index: 2; cursor: grab"
+                            data-tippy-content="Arrastre para ordenar" aria-hidden="true">drag_handle</i>
+                        <br />
+                        <a href="#" class="btnOcultarComision tippy" style="z-index: 2"
+                            data-tippy-content="Ocultar materia">
+                            <i class="material-icons w3-large" aria-hidden="true">close</i>
+                        </a>
+                    </div>
+                    <div class="w3-slarge materia-titulo">Tecnologia de Redes</div>
+                    <div class="w3-small">2634 - Com: 02-6300 - Alumno/a</div>
+                </div>
+                <div class="w3-rest w3-mobile materia-herramientas">
+                    <div class="w3-row">
+                        <a href="#" class="w3-col w3-padding-8 w3-center w3-hover-green w3-hover-text-white">
+                            <i class="material-icons w3-xxlarge" aria-hidden="true">calendar_today</i>
+                            <div class="w3-small">Cronograma</div>
+                        </a>
+
+                        <a href="#" class="w3-col w3-padding-8 w3-center w3-hover-green w3-hover-text-white">
+                            <i class="material-icons w3-xxlarge" aria-hidden="true">import_contacts</i>
+                            <div class="w3-small">Contenidos</div>
+                        </a>
+
+                        <a href="#" class="w3-col w3-padding-8 w3-center w3-hover-green w3-hover-text-white">
+                            <i class="material-icons w3-xxlarge" aria-hidden="true">description</i>
+                            <div class="w3-small">Portafolio</div>
+                        </a>
+
+                        <a href="#" class="w3-col w3-padding-8 w3-center w3-hover-blue w3-hover-text-white">
+                            <i class="material-icons w3-xxlarge" aria-hidden="true">drafts</i>
+                            <div class="w3-small">Mensajes</div>
+                        </a>
+
+                        <a href="#" class="w3-col w3-padding-8 w3-center w3-hover-blue w3-hover-text-white">
+                            <i class="material-icons w3-xxlarge" aria-hidden="true">forum</i>
+                            <div class="w3-small">Foro</div>
+                        </a>
+
+                        <a href="./chat.html" class="w3-col w3-padding-8 w3-center w3-hover-blue w3-hover-text-white">
+                            <i class="material-icons w3-xxlarge" aria-hidden="true">chat</i>
+                            <div class="w3-small">Chat</div>
+                        </a>
+
+                        <a href="#" class="w3-col w3-padding-8 w3-center w3-hover-red w3-hover-text-white">
+                            <i class="material-icons w3-xxlarge" aria-hidden="true">assignment_turned_in</i>
+                            <div class="w3-small">Evaluaci&oacute;n</div>
+                        </a>
+
+                        <a href="#" class="w3-col w3-padding-8 w3-center w3-hover-purple w3-hover-text-white">
+                            <i class="material-icons w3-xxlarge" aria-hidden="true">watch_later</i>
+                            <div class="w3-small">Turnos</div>
+                        </a>
+                      
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-light-grey w3-row w3-hover-shadow w3-section materia-bloque" data-id="20095103">
+                <div class="w3-col w3-mobile w3-padding materia-descripcion">
+                    <div class="w3-right w3-margin botoneraDetalle">
+                        <a href="#" class="popup-curso tippy" style="z-index: 2" data-tippy-content="Ver detalle">
+                            <i class="material-icons w3-large" aria-hidden="true">more_vert</i>
+                        </a>
+                    </div>
+                    <div class="w3-right botoneraOrganizar w3-hide w3-margin">
+                        <i class="material-icons w3-large tippy sort-handler" style="z-index: 2; cursor: grab"
+                            data-tippy-content="Arrastre para ordenar" aria-hidden="true">drag_handle</i>
+                        <br />
+                        <a href="#" class="btnOcultarComision tippy" style="z-index: 2"
+                            data-tippy-content="Ocultar materia">
+                            <i class="material-icons w3-large" aria-hidden="true">close</i>
+                        </a>
+                    </div>
+                    <div class="w3-slarge materia-titulo">
+                        Programación Web II
+                    </div>
+                    <div class="w3-small">2628 - Com: 01-1929 - Alumno/a</div>
+                </div>
+                <div class="w3-rest w3-mobile materia-herramientas">
+                    <div class="w3-row">
+                        <a href="#" class="w3-col w3-padding-8 w3-center w3-hover-green w3-hover-text-white">
+                            <i class="material-icons w3-xxlarge" aria-hidden="true">calendar_today</i>
+                            <div class="w3-small">Cronograma</div>
+                        </a>
+
+                        <a href="#" class="w3-col w3-padding-8 w3-center w3-hover-green w3-hover-text-white">
+                            <i class="material-icons w3-xxlarge" aria-hidden="true">import_contacts</i>
+                            <div class="w3-small">Contenidos</div>
+                        </a>
+
+                        <a href="#" class="w3-col w3-padding-8 w3-center w3-hover-green w3-hover-text-white">
+                            <i class="material-icons w3-xxlarge" aria-hidden="true">auto_stories</i>
+                            <div class="w3-small">Autoguia</div>
+                        </a>
+
+                        <a href="#" class="w3-col w3-padding-8 w3-center w3-hover-green w3-hover-text-white">
+                            <i class="material-icons w3-xxlarge" aria-hidden="true">description</i>
+                            <div class="w3-small">Portafolio</div>
+                        </a>
+
+                        <a href="#" class="w3-col w3-padding-8 w3-center w3-hover-blue w3-hover-text-white">
+                            <i class="material-icons w3-xxlarge" aria-hidden="true">drafts</i>
+                            <div class="w3-small">Mensajes</div>
+                        </a>
+
+                        <a href="#" class="w3-col w3-padding-8 w3-center w3-hover-blue w3-hover-text-white">
+                            <i class="material-icons w3-xxlarge" aria-hidden="true">forum</i>
+                            <div class="w3-small">Foro</div>
+                        </a>
+
+                        <a href="./chat.html" class="w3-col w3-padding-8 w3-center w3-hover-blue w3-hover-text-white">
+                            <i class="material-icons w3-xxlarge" aria-hidden="true">chat</i>
+                            <div class="w3-small">Chat</div>
+                        </a>
+
+                        <a href="#" class="w3-col w3-padding-8 w3-center w3-hover-red w3-hover-text-white">
+                            <i class="material-icons w3-xxlarge" aria-hidden="true">note_alt</i>
+                            <div class="w3-small">Encuestas</div>
+                        </a>
+
+                        <a href="#" class="w3-col w3-padding-8 w3-center w3-hover-red w3-hover-text-white">
+                            <i class="material-icons w3-xxlarge" aria-hidden="true">assignment_turned_in</i>
+                            <div class="w3-small">Evaluaci&oacute;n</div>
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-light-grey w3-row w3-hover-shadow w3-section materia-bloque" data-id="20095116">
+                <div class="w3-col w3-mobile w3-padding materia-descripcion">
+                    <div class="w3-right w3-margin botoneraDetalle">
+                        <a href="#" class="popup-curso tippy" style="z-index: 2" data-tippy-content="Ver detalle">
+                            <i class="material-icons w3-large" aria-hidden="true">more_vert</i>
+                        </a>
+                    </div>
+                    <div class="w3-right botoneraOrganizar w3-hide w3-margin">
+                        <i class="material-icons w3-large tippy sort-handler" style="z-index: 2; cursor: grab"
+                            data-tippy-content="Arrastre para ordenar" aria-hidden="true">drag_handle</i>
+                        <br />
+                        <a href="#" class="btnOcultarComision tippy" style="z-index: 2"
+                            data-tippy-content="Ocultar materia">
+                            <i class="material-icons w3-large" aria-hidden="true">close</i>
+                        </a>
+                    </div>
+                    <div class="w3-slarge materia-titulo">Taller Web II</div>
+                    <div class="w3-small">2635 - Com: 01-6600 - Alumno/a</div>
+                </div>
+                <div class="w3-rest w3-mobile materia-herramientas">
+                    <div class="w3-row">
+                        <a href="#" class="w3-col w3-padding-8 w3-center w3-hover-green w3-hover-text-white">
+                            <i class="material-icons w3-xxlarge" aria-hidden="true">calendar_today</i>
+                            <div class="w3-small">Cronograma</div>
+                        </a>
+
+                        <a href="#" class="w3-col w3-padding-8 w3-center w3-hover-green w3-hover-text-white">
+                            <i class="material-icons w3-xxlarge" aria-hidden="true">import_contacts</i>
+                            <div class="w3-small">Contenidos</div>
+                        </a>
+
+                        <a href="#" class="w3-col w3-padding-8 w3-center w3-hover-green w3-hover-text-white">
+                            <i class="material-icons w3-xxlarge" aria-hidden="true">description</i>
+                            <div class="w3-small">Portafolio</div>
+                        </a>
+
+                        <a href="#" class="w3-col w3-padding-8 w3-center w3-hover-blue w3-hover-text-white">
+                            <i class="material-icons w3-xxlarge" aria-hidden="true">drafts</i>
+                            <div class="w3-small">Mensajes</div>
+                        </a>
+
+                        <a href="#" class="w3-col w3-padding-8 w3-center w3-hover-blue w3-hover-text-white">
+                            <i class="material-icons w3-xxlarge" aria-hidden="true">forum</i>
+                            <div class="w3-small">Foro</div>
+                        </a>
+
+                       
+
+                        <a href="#" class="w3-col w3-padding-8 w3-center w3-hover-red w3-hover-text-white">
+                            <i class="material-icons w3-xxlarge" aria-hidden="true">assignment_turned_in</i>
+                            <div class="w3-small">Evaluaci&oacute;n</div>
+                        </a>
+
+                       
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#"
+            class="w3-btn w3-light-grey w3-section w3-mobile w3-hide-medium w3-hide-large btnMostrarOcultas w3-hide">
+            <i class="material-icons w3-large" aria-hidden="true">visibility</i> Ver
+            materias ocultas
+        </a>
+        <a href="#"
+            class="w3-btn w3-light-grey w3-section w3-mobile w3-hide-medium w3-hide-large btnOcultarOcultas w3-hide">
+            <i class="material-icons w3-large" aria-hidden="true">visibility_off</i>
+            Ocultar materias ocultas
+        </a>
+        <a href="#" class="w3-btn w3-light-gray w3-section w3-mobile w3-hide-medium w3-hide-large btnOrganizar">
+            Organizar materias
+        </a>
+
+        <!--[if gte IE 9]><!-->
+        <script type="text/javascript">
+            $("title").text("" + $("title").text());
+        </script>
+        <!--<![endif]-->
+
+        <!-- ================================== PIE DE PAGINA ================================== -->
+
+        <footer class="w3-container w3-section w3-padding-16 w3-center w3-opacity">
+            <hr />
+            Departamento de Ingenier&iacute;a e Investigaciones Tecnol&oacute;gicas
+            - Materias Interactivas en L&iacute;nea - 2023
+        </footer>
+    </main>
+</body>
+
+</html>

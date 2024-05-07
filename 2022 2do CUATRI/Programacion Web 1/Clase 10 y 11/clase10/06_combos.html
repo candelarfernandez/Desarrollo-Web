@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Combos</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+	<select id="inicial">
+	  <option value="0"></option>
+      <option value="1">Color</option>
+      <option value="2">País</option>
+	  <option value="3">Universidad</option>
+   </select> 
+   <select id="secundario">
+   </select>
+
+   <script>
+		let colores=["azul","blanco","verde"];
+		let paises=["argentina","brazil"];
+		let universidades=["UNLAM","UBA"];
+
+		const inicial=document.querySelector("#inicial");
+		const secundario=document.querySelector("#secundario");
+
+		inicial.addEventListener("change",()=>{
+			secundario.innerHTML="";
+			/*while (secundario.firstChild) {
+				secundario.removeChild(secundario.firstChild);
+			}*/
+			if(inicial.value==1){
+				colores.forEach(item=>{
+					let opcion=document.createElement("option");
+					opcion.value=item;
+					let nodoTexto=document.createTextNode(item);
+					opcion.appendChild(nodoTexto);
+					secundario.appendChild(opcion);
+					//secundario.innerHTML+=`<option value=${item}>${item}</option>`;
+				});
+			}
+			
+		});
+   </script>
+</body>
+</html>

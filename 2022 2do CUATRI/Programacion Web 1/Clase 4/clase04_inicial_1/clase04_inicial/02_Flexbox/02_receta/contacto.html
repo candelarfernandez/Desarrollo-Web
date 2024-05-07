@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+</head>
+<body>
+    <header>
+        <h1>Contacto</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="receta.html">Receta</a>
+            </li>
+            <li>
+                <a href="lemon-pie.html">Lemon Pie</a>
+            </li>
+            <li>
+                <a href="contacto.html">Contacto</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <form action="#" method="GET">
+                <label for="nombre">Nombre y Apellido:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingresá tu nombre" required> 
+                <br><br>
+                <label for="correo">Correo</label>
+                <input type="email" id="correo" name="correo" required autofocus> 
+                <br><br>
+                <label for="provincia">Provincia:</label>
+                <select name="provincia" id="provincia">
+                    <option value="">Seleccione una provincia</option>
+                    <option value="1">Buenos Aires</option>
+                    <option value="2">CABA</option>
+                    <option value="3" selected>Córdoba</option>
+                </select>
+                <br><br>
+                <label for="consultas">Consultas</label>
+                <textarea name="consultas" id="consultas" cols="30" rows="10" maxlength="150" placeholder="Ingresa una consulta"></textarea>
+                <br><br>
+                <p>Talle</p>
+                <label for="s">S</label>
+                <input type="radio" id="s" name="talle" value="s">
+                <label for="m">M</label>
+                <input type="radio" id="m" name="talle" value="m">
+                <label for="l">L</label>
+                <input type="radio" id="l" name="talle" value="l" checked>
+                <label for="xl">XL</label>
+                <input type="radio" id="xl" name="talle" value="xl">
+                <br><br>
+                <label for="terminos">Acepto términos y condiciones</label>
+                <input type="checkbox" id="terminos" name="terminos" checked>
+                <input type="submit" value="enviar">
+            </form>
+        </section>
+    </main>
+</body>
+</html>

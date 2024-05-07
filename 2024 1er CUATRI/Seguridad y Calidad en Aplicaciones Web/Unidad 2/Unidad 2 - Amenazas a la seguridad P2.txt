@@ -1,0 +1,30 @@
+Unidad 2 - Amenazas a la seguridad P2
+
+Sniffers
+es un programa de captura de las tramas de red. 
+con el wifi
+
+Diferentes tipos de ataques:
+Tampering: modificacion no autorizada de la informacion, romper
+Ataques mediante Javascript: se los utiliza para explotar fallas de seguridad. se aprovechan vulnerabilidades.
+Ataques drive-by download: se inyecta codigo dañino en el original, provocando que al ingresar al sitio afecte.
+
+Ataques a clientes:
+Hijackers: programas q buscan secuestrar una sesion. es como una familia de ataques que quieren secuestrar informacion. (Yo me logueo en mi homebanking, me roban el id y pueden entrar haciendose pasar x mi)
+Rootkits: es una especie de caja de herramientas que deja el atacante apra un ataque posterior. ataque por etapas. (quiero entrar a robar un banco, y entro antes a conocer el banco y dejo algo)
+Backdoors: una manera de ingresar, evitando el metodo de acceso principal (si yo para acceder a los datos de un sist me tengo que loguear, y me deja ver los datos de la bd, puedo acceder a la bd). habilitan un acceso alternativo al sistema permitiendo evitar el metodo de autenticacion principal.
+Stealers: programas que acceden a la informacion alamacenada en el equipo para facilitarsela al atacante. (va y busca contraseñas recordadas en navegadores)
+Keyloggers: dispositivos fisicos que registran la actividad de los dispositivos de entrada, como el teclado.
+Ransomware: son programas que retienen el control del equipo o cifran informacion almacenada en el mismo para que no pueda ser accedida. en muchos casos solicitan un pago para que sean desactivados.
+
+OWASP - Riesgos de seguridad en aplicacion
+top 10: elije las 10 vulnerabilidades principales y trabaja sobre ellas
+
+A1-Perdida de control de acceso:
+problematicas que hagan perder el tracking de acceso a la información (a las apis del backend, a quien le doy info del usuario en sesion, de form del front).
+Referencia directa insegura a objetos: referencio directamente un usuario por su valor en la bd.
+el actor 1 hace un request de sus datos, que son el 1 y 5, y los trae pero despues pide el 3 qno le corresponde y si no hay una validacion lo trae por mas q no le pertenezcan
+
+A2-Fallas criptograficas
+almacenamiento y transito: areas de riesgo
+cifrar de manera tal q quien no lo cifro, no lo pueda interpretar.

@@ -1,0 +1,29 @@
+.icono {
+    font-size: 40px;
+    color: brown;
+}
+
+.icon-link {
+    font-size: 50px;
+    color: rgb(66, 186, 233);
+}
+
+.icon-link:hover {
+    color: rgb(108, 26, 29);
+}
+
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.contenedor article {
+    width: calc(33.3% - 20px);
+}
+
+.contenedor img {
+    max-width: 100%;
+}

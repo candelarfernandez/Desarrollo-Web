@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+main{
+    width: 85%;
+    margin: auto;
+}
+h1{
+    background-color: #3F8C7D;
+    color: #fff;
+    padding: 40px 80px ;
+    font-style: normal;
+    font-size: 28px;
+    border-bottom: 20px solid #000;
+}
+.coordinadora{
+    margin: 20px;
+}
+.coordinadora p {
+    color: rgb(147, 137, 137);
+}
+h3{
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #000;
+}
+.seccion1{
+    background-color: #F4F4F4;
+}
+.seccion1 p{
+    margin-bottom: 15px;
+    padding: 10px;
+}
+.seccion2 p{
+    margin-bottom: 15px;
+    margin-left: 25px;
+    margin-right:25x;
+}
+#parrafo-principal{
+    margin-left: 0;
+    margin-right: 0;
+}
+img{
+   width: 50%;
+   margin: 50px;
+   margin-left: auto;
+   margin-right: auto;
+   display: block;
+}
+footer{
+    border-top: 13px solid #3F8C7D;
+    color: #fff;
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+}
+

@@ -1,0 +1,75 @@
+UNIDAD N2 - Seguridad y calidad
+
+Amenazas a la seguridad
+
+Daño: Un ataque que va a poder ser cuantificable(por ej: cantidad de cuentas expuestas, cantidad de datos como volumen, porcentaje de volumen de datos que haya sido expuesto, cantidad de accesos). Efecto negativo cuantificable, y es comun que veamos un valor economico en cuanto a ese daño, ademas de los ejemplos antes nombrados.
+Riesgo: 
+Amenaza: Aquellas situaciones de daño que tienen posibilidad de ocurrir
+Vulnerabilidad: una deficiencia en un sistema susceptible de producir un fallo en el mismo.
+Exploit: cualquier tecnica(metodología) que permita aprovechar una vulnerabilidad en un sistema para producir un daño. Los codigos/programas que implementan el exploit son otra cosa.
+
+Tipos de vulnerabilidades(en base a su origen):
+-Debidas al diseño: existen por una mala decision al momento de diseñar el sistema (seleccionar una arquitectura equivocada, mala eleccion de producto al armar el stack teconologico).
+-Debidas a la implementacion: al momento de generar mi aplicacion y desarrollar mi código, genero las vulnerabilidades
+-Debidas al uso: pueden darse situaciones que expongan a mi sistema(por ejemplo si tengo usuarios que elijen contraseñas con poca seguridad, se tiene que forzar a elegir ciertas reglas para reforzar la seguridad y contener ese riesgo)
+
+Areas de vulnerabilidades en entornos Web:
+Area de cliente: todo lo q pense como desarrollador q puede pasar como cliente, puede que no ocurra 
+Area de red: lo mismo que lo del cliente
+Area de servidor:(el area mas segura ya que ahi se tiene control de el entorno donde lo corres, el software, manejo de datos) si se puede garantizar desde este lado. tiene que desconfiar de la entrada siempre, porque es la unica forma que tenemos de controlarlo, aunque afecete la performance.
+
+Referencia: La nube
+
+Cuando hablamos de la nube, hablamos de servicios (por ejemplo , Google drive, One drive, Dropbox) son aplicaciones en la nube para usuarios final. Despues hay otras plataformas que nos brindan servicios que estan pensados para desarrolladores (por ejemplo aws, servicios de azure, base de datos en la nube como cloudant, coauchdb, mongoDB).
+Pensar en servicios y no en la aplicación de uso final.
+
+Ventajas:
+-Facilidad de acceso a la informacion desde diferentes ubicaciones y dispositivos(una bd desde diferentes app)
+-Infraestrucutra flexible y escalable(al contratar un servicio, se puede ser dinamico)
+-Reduccion de costos x infraestructura y servicios.
+-Centralizacion de administración y gestión de datos.
+
+Desventajas:
+-Dependencia en infraestructura y servicios de terceros
+-Dependencia en servicios de comunicacion externos para acceder a los sistemas y datos propios.
+-Perdida del control de la seguridad de la información(delegada al proveedor)
+
+Ataques a aplicaciones conocidas
+
+Common Vulnerabilities and Exporsures (CVE):es un codigo gestionado por una organizacion llamado MITRE que es una ficha de vulnerabilidad. MITRE se encarga de mantener este registro y permite a un usuario conocer de una forma mas objetiva una vulnerabilidad en un programa o sistema. El codigo identificador es del modo CVE - año - numero. Habla de una vulnerabilidad de un producto especifico.
+
+Common Weakness Enumeration(CWE): Listado de debilidades genericas. Una debilidad es una circunstancia que genera una exposicion pero no esta asociada a un producto (por ejemplo, un manejo inapropiado de la validacion de entrada, es algo generico).Esta gestionado por la MITRE tambien.
+
+La NVD National Vulnerability Database, se utiliza paa traquear los datos de vulnerabilidades. Corresponde al NIST.
+
+(CVSS) Common Vulnerability Scoring System: permite ponerle un puntaje a las vulnerabilidades (de 0 a 10). Mientras mas alto, de mayor severidad.
+
+
+Prevencion de vulnerabilidades
+-Lista de bugtaq: notifican sobre nuevas vulnerabilidades sobre productos conocidos, hay que buscarlo manualmente.
+-Sistemas automaticos de analisis:
+*DAST: Scanners de vulnerabilidades orientados hacia diferentes objetivos, sobre un objetivo en ejecucion, se corre un proceso y se identifican las vulnerabilidades que se encontraron en ese objetivo.
+*SAST: herramientas que se corren dentro del entorno de desarrollo que barre el codigo para analizar y encontrar diferentes vulnerabilidades o buenas practicas.
+*IAST: detecta vulnerabilidades en tiempo real durante la ejecución.
+
+CERT: Computer Emergency Response team 
+CSIRT: Centro de respuesta a incidentes de seguridad informatica
+En unra organizacion publica o privada tener un equipo centralizado al cual se pueda acudir cuando hay un problema relacionado con la seguridad.
+El cert funciona para industrias especificas, por ejemplo el banelco tiene un cert. Recolecta informacion, toma acciones preventivas y decisiones para evtar cierta situacion.
+
+Denegacio de servicio(DoS)
+Es un metodo de ataque antiguo, que causa que un servicio o recurso sea inaccesible a los usuarios legitimos. Buscan dar de baja el servidor o hacer que se haga tan mal que no se cumpla con la funcion de negocio. Hay diferentes formas tecnicas para realizarlo.
+Clasificacion:
+-Volume-based DDoS attacks: saturar al servidor, debido a que le doy un gran volumen de carga de trabajo que el servidor no puede manejar.
+-Application DDoS attacks: orientado a ataques distribuidos o a aplicacion, se busca que muchas terminales operan directamente contra el servidor aprovechando una caracteristica de una aplicacion que permite saturar al servidor.
+-Low-rate DoS (LDoS) attacks: identifica un problema de diseño o implementacion que permita poder inhabilitar el sistema.
+
+Flooding: inicialmente habia poca diferencia entre cliente-servidor, por lo que se inventaban clientes de flooding para poder generar una inundacion de solicitudes, para que se sature o entre en modo espera para anular o limitar el funcionamiento. (el handshake: hay una apertura de un puerto en un lado y en esa apertura hay mensajes que mandan las capas del protocolo, y ahi es donde se da el flooding).
+
+BotNet: que sean muchas terminales generando muchas solicitudes para poder saturar, esto toma empuje de la mano de internet ya que habia muchas maquinas interconectadas. Un malware para botnet infecta un cliente dejando que siga operando permaneciendo latente a la espera de una intrusion. La idea es quien configura el malware pueda definir un conjunto de operaciones que dsitribuye a todas las terminales infectadas, para que en determinado momento se ejecute y ataquen todas las terminales llamadas bots o zombies ataquen simultaneamente.
+(malware: todas las clasficaciones del software malicioso).
+
+Cuando hablamos de vulnerabilidades hablamos de una debilidad en un producto particular (especificas) y las debilidades son las formas que yo tengo de hacer algo (genericas)
+
+
+

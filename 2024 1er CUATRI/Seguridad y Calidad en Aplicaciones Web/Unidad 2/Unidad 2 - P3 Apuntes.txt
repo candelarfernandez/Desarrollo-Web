@@ -1,0 +1,28 @@
+Unidad 2 - Apuntes
+
+Sniffers: analizan los datos que se van transmitiendo, nos permite hacer una escucha.
+
+A3- Inyección
+
+CSRF es un tipo de ataque muy frecuente. El atacante podría inducir al browser a que ejecute el request de una manera inesperada.
+Para evitarlo, hay q utilizar un token único que debe estar en un campo oculto en mi formulario o requerir nueva autenticación del usuario antes de ejecutar el pedido.
+
+XSS-Cross Site Scripting cuando la inyección de código esta del lado del cliente (JavaScript).
+-XSS reflejado: que el usuario tome un valor con una secuencia de scripting alterada y lo redireccione hacia el backend. vuelve en la respuesta del servidor.
+-XSS almacenado: el atacante, en el primer tiempo, almacena el código malicioso y lo almacena en el servidor. el cliente recibe la respuesta desde el servidor con el código malicioso.
+-XSS Basados en DOM: el browser parsea el html, lo reestructura en un dom y lo renderiza. este ataque se da cuando al reestructurarlo, se encuentran datos maliciosos.
+--Medidas de prevención para el XSS: codificar datos no confiables, validación.
+
+A4 - Diseño Inseguro
+
+esta centrado en aspectos relacionados con fallas de diseño/arquitecturas.
+cuando se utilicen patrones de diseño obsoletos o poco seguros.
+"Secure by Design" trata de llevar los conceptos de seguridad desde el principio del diseño y la codificación para tener controles.
+Medidas de prevención: establecer un ciclo de vida de desarrollo seguro (llevar la seguridad lo mas cercano al diseño), utilizar patrones de diseño seguros, utilizar el modelado de amenazas para la autenticación critica, utilizar historias de usuario teniendo en cuenta controles, integrar verificaciones en fronted y backend, hacer pruebas resistentes a amenazas 
+
+A5 - Configuración de Seguridad Incorrecta
+
+todo lo que tiene que ver con la seguridad lógica (a que recursos puedo acceder y que cosas puedo hacer con esos recursos) se deben implementar en todas las capas para evitar vulnerabilidades. TODAS estas configuraciones deben estar definidas, implementadas y mantenidas.
+
+Entidad externa de XML
+

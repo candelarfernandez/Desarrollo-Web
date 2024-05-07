@@ -1,0 +1,7 @@
+body{
+    font-family: 'Abel', sans-serif;
+}
+header, main{
+    max-width: 60em;
+    margin:auto;
+}

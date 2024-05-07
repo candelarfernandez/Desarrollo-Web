@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Blinker&display=swap');
+body {
+    font-family: 'Blinker', sans-serif;
+}
+
+.btn {
+    background-color: #02c1d9;
+    padding: 0.5em;
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    margin: 2em 2em;
+    font-size: 1.1em;
+    transform: scale(1) rotate(0deg) translate();
+    transition: transform 0.5s;
+}
+
+.btn:hover {
+    transform: scale(1.2) rotate(5deg) translate(10px, 0px);
+}
+
+.recorte {
+    overflow: hidden;
+    width: 100px;
+}

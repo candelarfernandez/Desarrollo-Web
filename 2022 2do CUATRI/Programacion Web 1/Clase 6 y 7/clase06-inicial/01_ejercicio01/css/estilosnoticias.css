@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header, main{
+    width: 95%;
+    margin: auto;
+}
+.col{
+    background-color: #7b1873;
+    color:#fff;
+    padding: 0.8em;
+    margin-top:1em;
+}
+@media screen and (min-width:48em){
+    .contenedor{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+    }
+    .col{
+        width: calc(50% - 1em);
+    }
+}
+@media screen and (min-width:60em){
+    .col{
+        width: calc(33.3% - 1em);
+    }
+}
