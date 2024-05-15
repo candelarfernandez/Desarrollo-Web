@@ -1,0 +1,49 @@
+VISTAS 
+
+¿Qué es?
+Es una consulta presentada como una tabla virtual. Físicamente no existe, pero es una tabla virtual que es el resultado de una consulta.
+Su estructura es por filas y columnas. Solo se almacena la definición de la tabla, NO los datos.
+-Es una alternativa para mostrar datos de varias tablas
+-Los datos accesibles a traves de la vista no están almacenados en la base de datos como un objeto.
+-Las tablas consultadas en una vista se denominan TABLAS BASE.
+-se le puede dar un nombre a cualquier consulta y almacenarla como una vista.
+
+Ventajas de realizar vistas
+1- Ocultar información: ya que independientemente de las tablas bases que utilice, solo va a ver la definición de esa vista
+2- Simplificar la administración: porque puedo dar a un usuario permisos a una determinada vista sin tener que dar permisos a las tablas
+3- Me puede ayudar a reducir la complejidad de una consulta
+4- Centrarse solo en los datos importantes de los usuarios
+5- Enmascarar la complejidad de la base (ocultar el diseño de la tabla real)
+6- 
+
+CREACION DE VISTAS
+Create view v_nombreVista
+as
+consulta
+restricciones:
+-No se puede incluir order by
+-no se puede incluir la palabra clave INTO
+
+Se puede encriptar la vista
+Alter view dbo._vPrecio
+WITH ENCRYPTION
+AS 
+consulta
+
+MODIFICAR VISTA
+Alter view v_nombreVista
+as
+consulta
+-No pueden afectar a mas de una tabla subyacente
+-Si quiero modificar campos que no están en la vista, no se puede
+
+Rendimiento 
+-Se reduce complejidad pero -
+
+para darle permisos a un usuario para determinada vista:
+GRANT SELECT ON Vista
+TO user_name
+
+
+
+

@@ -1,0 +1,121 @@
+CREACION DE BASE DE DATOS - Apuntes
+
+Dos categorias de bases de datos:
+-OLTP(Proceso de transacciones en linea): Datos que cmabian con frecuencia, hacen que ahya una actualizacion continua d mofiicacion (insert/delete/update). Cuentan con muchos usuarios conectados que realizan distintas transacciones. Altos grados de normalizacion (la tercera forma nomral como óptima), ubicacion correcta de los datos y pocos datos historicos(se manjea la información diaria)
+-OLAP(Ayuda a la toma de decisiiones): Bd que son optimas para las consultas de datos que no impliquen cambios frecuentes en los mismos. Poca normalizacion, Muchos indices y datos preprocesados.
+
+los system databases administran los objetos que voy creando en mi base de datos. sin ellas no hay forma que el motor funcione. ellas administran todos los objetos del motor.
+
+-Master: realiza seguimiento de intalacion del servidor y de todas las bases de datos que se creen posteriormente. Controla las asignaciones de archivos, los parámetros de configuración que afectan al sistema, las cuentas de inicio de sesión. todo lo que son configuraciones del motor.
+
+-Tempdb: temporal, fundamentalmente un espacio de trabajo, se regenera cada vez que arranca SQL Server. Se emplea para las tablas temporales creadas explícitamente por los usuarios, para las tablas de trabajo intermedias de SQL Server durante el procesamiento y la ordenación de las consultas. Maneja tablas temporales (#tabla) que existen hasta q esta mi conexion.
+
+-Model: Se utiliza como plantilla para todas las bases de datos creadas en un sistema. Cuando se ejecuta una instrucción CREATE DATABASE, la primera parte de la base de datos se crea copiando el contenido de la base de datos model, el resto de la nueva base de datos se llena con páginas vacías. 
+
+-Msdb: Es empleada por los servicios SQL Server Agent, Database Mail, Service Broker, log shipping, etc. para guardar información con respecto a tareas de automatización como por ejemplo copias de seguridad y tareas de duplicación, asimismo solución a problemas. 
+
+
+Por defecto, cuando se crea una base de datos, siempre se crea un archivo con los datos y otro archivo de log.
+-Archivo de datos: los datos que guardo.
+-Log: todas las transacciones q se realizan sobre las tablas que tengo en mi base, todas las acciones que yo hago se guardan ahi.
+
+Argumentos:
+-Nombre_BaseDatos: Nombre lógico de la base de datos
+-ON: Especifica la información sobre el archivo de datos 
+-LOG ON: Especifica la información sobre el archivo del registro de transacciones. 
+-Collate: Establece el juego de caracteres soportados. 
+-Primary: Especifica el grupo de archivos (filegroup) para este archivo. El grupo de archivo base del SQL Server se llama Primary. 
+-FileName: Nombre físico del archivo para el sistema operativo
+-Size: Tamaño inicial de la base de datos. Si no se especifica es de 1MB. 
+-MaxSize: Tamaño máximo para la base de datos. Si no se especifica la base de datos puede crecer hasta llenar el disco. 
+-FileGrowth: Especifica el incremento de crecimiento de la base de datos.
+Ejemplo:
+CREATE DATABASE Prueba 
+ON (NAME = 'Prueba_Data’,
+ FILENAME = 'D:\DATA\Prueba.mdf’,
+ SIZE = 20 MB, 
+FILEGROWTH = 0) 
+LOG ON (NAME = 'Prueba_Log’,
+FILENAME = 'D:\DATA\Prueba_Log.ldf’, 
+SIZE = 5 MB, 
+FILEGROWTH = 0) 
+
+
+Opciones de BD:
+-AUTO_CREATE_STATISTICS: Crea estadísticas en forma automática necesarias para la optimización de consultas. El valor predeterminado es ON. 
+-AUTO_UPDATE_STATISTICS: Actualiza automáticamente las estadísticas que están desactualizadas. El valor predeterminado es ON. 
+-AUTO_CLOSE; Si está en ON cierra la base de datos automáticamente cuando el último usuario cierra su sesión. El valor predeterminado es OFF (excepto para la edición Express) 
+-AUTO_SHRINK: Si está en ON la base de datos se encoge automáticamente en forma periódica. El valor predeterminado es OFF. Si quiero fragmentar o des mi base de datos.
+-READ_ONLY / READ_WRITE: Controla si los usuarios pueden modificar los datos. El valor predeterminado es READ_WRITE. 
+-SINGLE_USER / RESTRICTED_USER / MULTI_USER: SINGLE_USER, sólo se puede conectar un usuario a la base de datos en un momento dado. 
+RESTRICTED_USER, sólo pueden conectarse a la base de datos los miembros de la función fija de base de datos db_owner y los de las funciones fijas de servidor dbcreator y sysadmin, pero no se limita la cantidad de miembros. MULTI_USER, se permite el acceso de todos los usuarios que cuenten con los permisos adecuados para conectarse a la base de datos. 
+-RECOVERY MODEL: FULL / SIMPLE / BULK_LOGGED: El valor predeterminado es FULL. Provee un modelo de recuperación completo ante fallas. BULK_LOGGED no usa el registro de transacciones para ese tipo de movimiento. SIMPLE recupera la base de datos solo desde el último backup completo o diferencial. 
+-PAGE_VERIFY: Permite detectar entradas de E/S incompletas. CHECKSUM: guarda un valor calculado en la cabecera de la página basado en su contenido. Este valor es recalculado y comparado con los datos de la página para controlarlas. 
+-SQL ANSI_NULL_DEFAULT: Permite al usuario controlar el uso predeterminado del valor nulo de una columna al crear o modificar una tabla. El valor predeterminado es OFF o sea NOT NULL. 
+-ANSI_NULLS; Cuando está en ON, todas las comparaciones con nulos devuelven nulos. Si está en OFF solo devuelve nulo si ambos valores son nulos. El valor predeterminado es OFF 
+-QUOTED_IDENTIFIER: Cuando se especifica ON, se pueden utilizar comillas dobles para encerrar los identificadores delimitados. Cuando se especifica OFF, los identificadores no pueden ir entre comillas y deben adaptarse a todas las reglas de Transact-SQL que se aplican a los identificadores (Usar [] para delimitar identificadores). 
+
+Ejemplos de ALTER DATABASE: 
+ALTER DATABASE AdventureWorks
+ SET READ_ONLY 
+
+ALTER DATABASE AdventureWorks 
+SET RECOVERY FULL, PAGE_VERIFY CHECKSUM 
+
+
+Vistas del Catalogo
+Todos los metadatos del catálogo disponibles para el usuario se exponen mediante las vistas de catálogo. Las vistas de catálogo de SQL Server se han organizado en varias categorías.
+-Vistas de catálogo de archivos y bases de datos: 
+*sys.databases: devuelve un resgistro x cada base de datos
+*sys.database_files: devuelve un registro por cada archivo de una bd
+-Objetos:
+*sys.tables: registro x cada tabla de una bd
+*sys.views: registro por cada columna de un objeto
+-Seguridad:
+*sys.database_permissions: registro x cada permiso en una bd
+*sys.database_role_memeber: registro por cada miembro de un rol de una bd
+
+Funciones del sistema 
+devuelven info cerca de la bd y de los objetos de la misma 
+-DB_ID: Devuelve el num de id de esa base de datos.
+-DB_NAME: Devuelve el nombre de la bd
+-FILE_ID: Numero de id del archivo del nombre de archivo logico dado de la bd actual
+-FILE_NAME: Devuelve el nombre del archivo logico dado de la bd actual.
+
+Procedimientos almacenados de Sistema
+algunos de los p.a que permiten consultar info sobre bases de datos.
+EXEC Sp_Databases trae la lista de bd disponibles de un server
+EXEC Sp_HelpDB infomracion sobre las bd de un servidor
+EXEC Sp_Help presenta info acerca de un objeto de bd, si le pasas por parametro, sino info de todos los objetos.
+
+Grupos de archivos
+Las bd de SQL Server utilizan 3 tipos de archivos:
+Archivos de datos principales: es el punto de partida de la bd y apunta a los otros archivos de la bd. extension recomendada: .mdf
+Archivos de datos secundarios: son todos los archivos de datos menos el archivo de datos principal. extension recomendada: .ndf
+Archivos de registro: almacenan toda la info de registro que se usa para recuperar la bd. extension .ldf
+
+Esquemas (SCHEMAS)
+Es un espacio de nombres distinto que existe de forma independientemenete del usuario que lo creo. Cualquier usuario puede ser propietario de un esquema y es una propiedad transferible. TODAS las bd tienen uno llamado dbo
+ej: CREATE SCHEMA Ventas.
+Esto genera mayor flexibilidad para organizar la bd, un mejor manejo de permisos y al dar de baja un usuario no es necesario renombrar los objetos que le pertenecian
+
+Snapshot
+instantaneas de base de datos
+-es una vista estatica de solo lecutra en una bd denominada bd de origen
+-se mantiene hasta que el propietario de la bd la quita explicitamente
+-deben residir en la misma instancia de la bd
+-se pueden utilizar para crear informes
+
+Restricciones
+-PRIMARY KEY : (crear)CONSTRAINT PK_nameRestriccion PRIMARY KEY (nombrecolumna1)
+(modificar) ALTER TABLE x
+ADD CONSTRAINT PK_nameRestriccion PRIMARY KEY (nombrecolumna1)
+-UNIQUE:  CONSTRAINT UQ_nameRestriccion UNIQUE (nombreColumna)
+-FOREIGN KEY: CONSTRAINT FK_nombreRestriccion FOREIGN KEY (nombreColumna1)
+ REFERENCES nombreEsquema.otraTabla (nombreColumna1)
+-CHECK:  CONSTRAINT CH_nombreRestriccion CHECK (nombreColumna1>=0)
+-DEFAULT: nombreColumna1 INT NULL CONSTRAINT DF_nombreRestriccion DEFAULT(0)
+
+
+
+
