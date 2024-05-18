@@ -1,0 +1,9 @@
+How to Protect Your Devices from Viruses
+
+To protect your devices from Viruses, first you should install Antivirus Software. You must choose a reputable antivirus program and keep it updated to recognize new threats.
+Next, you need to Be Wary of Downloads. You will only download software and files from trusted sources, avoiding suspicious websites.
+Also, you have to keep your Software Updated. Update your operating system and applications whenever updates are available. Updates often include security patches.
+Strong passwords must be used. Unique and complex passwords should be created for all accounts. You should avoid using the same password for multiple acounts.
+Its important to Enable Firewalls because they help filter incoming and outgoing traffic on your device, adding a layer of protection.
+On the other hand, you must Be Cautious with Links. Suspicious links in emails, text messages, or social media posts should not be clicked on. Hover over links to see the real destination URL before clicking.
+Finally, you need to Back Up Your Data. Regularly back up your important data to an external drive or cloud storage. In case of a malware attack, backups can help you recover your files.
